@@ -5,8 +5,8 @@ pydantic==2.9.2
 pydantic-settings==2.6.0
 python-multipart==0.0.12
 
-# AI/ML - Microsoft Agent Framework (preview)
-agent-framework-azure-ai
+# AI/ML - Azure AI Inference for GitHub Models
+azure-ai-inference==1.0.0b7
 
 # Database
 sqlalchemy==2.0.36
