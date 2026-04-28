@@ -106,12 +106,15 @@ docker run -d \
 Once the server is running, you can test the AI suggestion feature:
 
 ```bash
-# First, you need an auth token (temporary workaround for MVP)
-# The full OAuth flow is still being implemented
+# Note: /comments/validate requires authentication (Authorization: Bearer <token>).
+# A full token issuance flow is not yet available for the MVP, so this endpoint
+# cannot be exercised without a valid JWT. Once authentication is implemented,
+# use the following:
 
-# Test comment validation
+# Test comment validation (requires a valid auth token)
 curl -X POST "http://localhost:8000/comments/validate" \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your_token_here>" \
   -d '{"content": "This is a test comment with exactly ten words here"}'
 
 # Expected response:
@@ -187,7 +190,8 @@ The application uses **GitHub Models** (free tier) for AI-powered suggestions:
 - **Solution**: Wait for rate limit reset or upgrade GitHub subscription
 
 ### Issue: Database errors
-- **Solution**: Delete `trendresponse.db` and restart (dev only)
+- **If using local SQLite** (default `DATABASE_URL`): Delete `trendresponse.db` and restart (dev only)
+- **If using Docker Compose with PostgreSQL**: Run `docker-compose down -v` to remove volumes and reinitialise the database, then `docker-compose up -d`
 
 ### Issue: Docker container won't start
 - **Solution**: Check logs with `docker-compose logs api`
@@ -205,10 +209,9 @@ The application uses **GitHub Models** (free tier) for AI-powered suggestions:
 
 3. **Add Sample Data**
    - Seed the database with sample posts for testing
-   - See `scripts/seed_data.py` (to be created)
+   - Create a seed script and add it to `scripts/` as needed
 
 4. **Deploy to Production**
-   - See deployment guides in `docs/deployment/`
    - Options: AWS Lambda, Heroku, Azure Container Apps
 
 ## Additional Resources
