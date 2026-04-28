@@ -26,7 +26,7 @@ Examples of unacceptable behavior include:
 
 Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening a [GitHub Security Advisory](https://github.com/tim-dickey/trendresponse/security/advisories/new) or by contacting the maintainer directly via GitHub ([@tim-dickey](https://github.com/tim-dickey)). All complaints will be reviewed and investigated promptly and fairly.
 
 All project maintainers are obligated to respect the privacy and security of the reporter of any incident.
 
