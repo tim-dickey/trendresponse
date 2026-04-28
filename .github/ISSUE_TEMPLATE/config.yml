@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/tim-dickey/trendresponse/discussions
+    about: Ask questions and discuss ideas
+  - name: Documentation
+    url: https://github.com/tim-dickey/trendresponse/blob/main/README.md
+    about: Check out our documentation and guides
